@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Profile Login Form Flat Responsive widget Template :: cssmoban</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> 
+addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); }
+</script>
+<!-- font files  -->
+<!-- css files -->
+<link th:href="@{/static/css/animate-custom.css}" rel="stylesheet" type="text/css" media="all" />
+<link th:href="@{/static/css/user.css}" rel="stylesheet" type='text/css' media="all" />
+<!-- /css files -->
+</head>
+<body>
+<div class="header">
+	<h1>ipso微服务平台</h1>
+</div>
+<div class="content">	
+	<section>				
+        <div id="container_demo" >
+            <a class="hiddenanchor" id="toregister"></a>
+            <a class="hiddenanchor" id="tologin"></a>
+            <div id="wrapper">
+				<div id="login" class="animate form">
+                    <form  action="#" autocomplete="on" th:action="@{/user/toLogin}"   method="get">
+                        <h2>Login</h2> 
+                        <p> 
+							<label for="username" class="uname" data-icon="u" > 账号 </label>
+                            <input id="username" name="name" required="required" type="text" placeholder="手机号或者用户名"/>
+                        </p>
+						<p> 
+                            <label for="password" class="youpasswd" data-icon="p"> 密码 </label>
+							<input id="password" name="pass" required="required" type="password" placeholder="用户密码" />
+                        </p>
+                        <p class="keeplogin"> 
+							<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+							<label for="loginkeeping">记住我</label>
+						</p>
+                        <p class="login button"> 
+                            <input type="submit" value="登录" />
+                        </p>
+                        <p class="change_link">
+							还未注册？
+							<a href="#toregister" class="to_register">注册</a>
+						</p>
+                    </form>
+                </div>
+				<div id="register" class="animate form">
+                    <form  action="#" autocomplete="on" th:action="@{/user/add}" th:object="${user}" method="post">
+                        <h2> Sign up </h2>
+                        <p>
+                            <label for="usernamesignup" class="uname" data-icon="u">账号</label>
+                            <input id="usernamesignup" name="userName" required="required" type="text" placeholder="用户名" />
+						</p>
+                        <p>
+                            <label for="phonesignup" class="youmail" data-icon="e" > 手机</label>
+                            <input id="phonesignup" name="userPhone" required="required" type="text" placeholder="手机"/>
+                        </p>
+                        <p>
+                            <label for="codesignup" class="youcode" data-icon="e" >验证码</label>
+                            <input id="codesignup" name="code" required="required" type="text" placeholder="手机"/>
+                        </p>
+                        <p>
+                            <label for="codesignup" class="youcode" data-icon="e" >简介</label>
+                            <input id="introsignup" name="intro" required="required" type="text" placeholder="简介"/>
+                        </p>
+                        <p>
+                            <label for="emailsignup" class="youmail" data-icon="e" > 邮箱</label>
+                            <input id="emailsignup" name="userEmail" required="required" type="email" placeholder="邮箱地址"/>
+                        </p>
+                        <p>
+							<label for="passwordsignup" class="youpasswd" data-icon="p">密码 </label>
+                            <input id="passwordsignup" name="userPass" required="required" type="password" placeholder="请输入密码"/>
+                        </p>
+                        <p class="signin button">
+							<input type="submit" value="提交"/>
+						</p>
+                        <p class="change_link">
+							已经是会员了？
+							<a href="#tologin" class="to_register">登录</a>
+                            <a id="Send" th:href="@{/message/get}" href="#tologin" class="to_register">发送验证码</a>
+						</p>
+                    </form>
+                </div>
+			</div>
+        </div>  
+    </section>
+</div>
+</body>
+</html>

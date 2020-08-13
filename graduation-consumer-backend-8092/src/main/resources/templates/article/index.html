@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>会员服务中心</title>
+	<link th:href="@{/static/layui/css/layui.css}" rel="stylesheet" type="text/css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+
+	<div th:replace="./common/header"></div>
+
+	<div class="layui-body">
+		<!-- 内容主体区域 -->
+		<div style="padding: 15px;">
+			<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+				<legend>会员服务中心</legend>
+			</fieldset>
+
+			<div style="padding: 20px; background-color: #F2F2F2;">
+				<div class="layui-row layui-col-space15">
+					<span id="page" th:text="${page.total}" hidden ></span>
+					<div th:each="article:${list}"  class="layui-col-md12">
+						<div class="layui-card">
+							<div class="layui-card-header"><h3 th:text="${article.articleName}">test</h3></div>
+							<div class="layui-card-body">
+								<p><span style="font-size: 1.5em">发布时间：</span><span th:text="${article.updateTime}">111</span></p>
+								<p><span style="font-size: 1.5em">喜欢：</span><span th:text="${article.likeNum}">0</span></p>
+							</div>
+							<div class="layui-card-header">
+								<a th:href="@{/article/delete}+'?id='+ ${article.articleId}" type="button" class="layui-btn layui-btn-primary">删除</a>
+								<a th:href="@{/article/update}+'?id='+ ${article.articleId}" type="button" class="layui-btn layui-btn-primary">更新</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div id="test1"></div>
+		</div>
+	</div>
+
+	<div th:replace="./common/footer"></div>
+
+</div>
+<script th:src="@{/static/layui/layui.js}"></script>
+<script>
+	layui.use(['element', 'layer', 'laypage'], function(){
+		var element = layui.element;
+		var layer = layui.layer;
+
+		//监听折叠
+		element.on('collapse(test)', function(data){
+			layer.msg('展开状态：'+ data.show);
+		});
+
+		var laypage = layui.laypage;
+		var page = document.getElementById('page').innerText;
+		//执行一个laypage实例
+		laypage.render({
+			elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+			,count: page //数据总数，从服务端得到
+		});
+	});
+</script>
+</body>
+</html>

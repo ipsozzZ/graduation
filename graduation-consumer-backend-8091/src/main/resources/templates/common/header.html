@@ -1,0 +1,77 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>会员服务中心</title>
+    <link th:href="@{/static/layui/css/layui.css}" rel="stylesheet" type="text/css">
+</head>
+<body class="layui-layout-body">
+<!---start-header--->
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">微服务会员服务系统</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a th:text="${session.userName}" th:href="@{/user/get}+'?id='+${session.userId}">
+                    ipso
+                </a>
+            </li>
+            <li class="layui-nav-item"><a href="http://localhost:8081/user/login?type=1">退出</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">文章模块</a>
+                    <dl class="layui-nav-child">
+                        <dd><a th:href="@{/article/index?userId=} + ${session.userId} + '&currPage=1&size=5' " href="javascript:;">文章列表</a></dd>
+                        <dd><a th:href="@{/article/add?userId=} + ${session.userId}" href="javascript:;">添加文章</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">相册模块</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">列表</a></dd>
+                        <dd><a href="javascript:;">添加图片</a></dd>
+                        <dd><a href="">超链接</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">模板模块</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">列表</a></dd>
+                        <dd><a href="javascript:;">添加模板</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">通讯录</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">列表</a></dd>
+                        <dd><a href="javascript:;">添加联系人</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">友情链接</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">列表</a></dd>
+                        <dd><a href="javascript:;">添加友链</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="">服务投票</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script th:src="@{/static/layui/layui.js}"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+</body>

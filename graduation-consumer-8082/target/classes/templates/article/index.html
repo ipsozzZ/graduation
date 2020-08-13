@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+	<head>
+		<title>Home</title>
+		<link th:href="@{/static/css/style.css}" rel="stylesheet" type="text/css"  media="all" />
+	</head>
+	<body>
+		<!---start-wrap--->
+		<div class="wrap">
+			<!---start-header--->
+			<div class="header">
+				<!---start-logo--->
+				<div class="logo">
+					<a href="index.html"><img style="height: 50px;" th:src="@{/static/images/logo1.jpg}" title="logo" /></a>
+				</div>
+				<!---End-logo--->
+				<!---start-head-social-icons--->
+				<div class="top-social-icons">
+					<div class="social-icons">
+						<ul>
+							<li><a href="#"><img th:src="@{/static/images/facebook1.png}" title="facebook" /></a></li>
+							<li><a href="#"><img th:src="@{/static/images/twitter1.png}" title="Twitter" /></a></li>
+							<li><a href="#"><img th:src="@{/static/images/youtube1.png}" title="Youtube" /></a></li>
+						</ul>
+					</div>
+					<div class="clear"> </div>
+				</div>
+				<div class="clear"> </div>
+				<!---End-head-social-icons--->
+				<!---start-top-nav---->
+				<div class="top-nav">
+					<ul>
+						<li><a href="index.html">首页</a></li>
+						<li><a href="elements.html">模板</a></li>
+						<li><a href="elements.html">通讯录</a></li>
+						<li><a href="elements.html">备忘录</a></li>
+						<li><a href="elements.html">相册</a></li>
+						<li><a href="contact.html">关于我</a></li>
+						<div class="clear"> </div>
+					</ul>
+				</div>
+				<!---End-top-nav---->
+			</div>
+			<!---End-header--->
+			<!---start-main---->
+			<div class="main">
+				<!---start-Content---->
+				<div class="content">
+					
+					<!-- 布局需求 -->
+					<div class="image-slider">		
+					</div>
+					<div class="clear"> </div>
+
+					<div class="Latest-news">
+						<div class="Latest-news-title">
+							<h3>文章列表</h3>
+							<h5> </h5>
+							<div class="clear"> </div>
+						</div>
+
+						<!--/*@thymesVar id="list" type="Article"*/-->
+						<div th:each="article:${list}" class="blog-articals">
+							<div class="artical">
+								<div class="artical-heading">
+									<h3>${article.}Java程序调用自定义c语言程序</h3>
+									<h4><span>发布日期</span> 2020/04/19 17:51:13</h4>
+								</div>
+								<div class="artical-box">
+									<div class="artical-img">
+										<a th:href="@{/get}" href="#"><img th:src="@{/static/images/art1.jpg}" title="imag-name" /></a>
+									</div>
+									<div class="artical-info">
+										<p>计算机中有很多的编程语言，各有各的特色和应用范围。Java混合编程就是Java程序和其它应用程序进行通讯和数据交互，比如我们都知道c语言的计算性能要比Java的略好一些，所以Java程序可以调用c语言程序来进行一些比较耗时的计算工作，从而提高程序性能。<a href="#">更多...</a></p>
+									</div>
+									<div class="clear"> </div>
+								</div>
+							</div>
+						</div>
+
+						<div class="blog-articals">
+							<div class="artical">
+								<div class="artical-heading">
+									<h3>Java多线程基础</h3>
+									<h4><span>发布日期</span> 2020/04/22 16:25:33</h4>
+								</div>
+								<div class="artical-box">
+									<div class="artical-img">
+										<a href="#"><img th:src="@{/static/images/art-img2.jpg}" title="imag-name" /></a>
+									</div>
+									<div class="artical-info">
+										<p>java内存模型是：虚拟机中有一块主内存(包括了我们定义的各种变量)，当线程创建后调用一个主内存中的值时会在线程的工作内存中保存一个从主内存获取过来的变量副本，对工作内存中的变量进行操作，再修改后的某一时刻将操作后的变量返回给主内存中的原变量，此期间如果再有其它线程对该变量进行操作时就有可能产生变量不同步问题。所以线程共享变量一定要使用volatile关键字修饰。<a href="#">更多...</a></p>
+									</div>
+									<div class="clear"> </div>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="blog-articals">
+							<div class="artical">
+								<div class="artical-heading">
+									<h3>JDBC知识点整理</h3>
+									<h4><span>发布日期</span> 2020/04/12 14:11:49</h4>
+								</div>
+								<div class="artical-box">
+									<div class="artical-img">
+										<a href="#"><img src="images/art-img3.jpg" title="imag-name" /></a>
+									</div>
+									<div class="artical-info">
+										<p>他包含了数据库操作规范(类、接口等)，没有提供实现。只需要对应的数据库提供驱动jar包，接入驱动jar包后就可以连接对应的数据库。<a href="#">更多...</a></p>
+									</div>
+									<div class="clear"> </div>
+								</div>
+							</div>
+						</div> -->
+						<a class="button" href="#">浏览所有文章</a>
+					</div>
+				</div>
+				<!---End-Content---->
+
+				<!---start-sidebar---->
+				<div class="side-bar">
+					<div class="sidebar-top-add">
+						<h3>热点文章</h3>
+						<a href="#"><img th:src="@{/static/images/art1.jpg}" title="add"/></a>
+						<p>Java程序调用自定义c语言程序</p>
+
+						<hr>
+						<!-- <a href="#"><img src="images/art-img2.jpg" title="add"/></a>
+						<p>Java多线程基础</p> -->
+					</div>
+					<div class="presedent-img">
+							<div class="Latest-news-title side-bar-sub-heading">
+								<h3>开放相册</h3>
+								<h5> </h5>
+								<div class="clear"> </div>
+							</div>
+						<a href="#"><img th:src="@{/static/images/prasedent.png}" title="name" /></a>
+					</div>
+					<div><hr></div>
+					<div class="sponsers-list">
+						<h3>其它</h3>
+						<a href="#"><img th:src="@{/static/images/spons1.png}" title="sponser-name" /></a>
+					</div>
+				</div>
+				<div class="clear"> </div>
+				<!---End-sidebar---->
+			</div>
+			<!---End-main---->
+			</div>
+			<!---start-footer---->
+			<div class="footer">
+				<div class="footer-nav-grid">
+					<ul>
+						<li><a href="#">友情链接：</a></li>
+						<li><a href="http://www.ipso.live" target="_blank">ipso</a></li>
+						<li><a href="https://www.baidu.com/">百度</a></li>
+						<li><a href="#">test1</a></li>
+						<li><a href="#">test2</a></li>
+						<li><a href="#">test2</a></li>
+						<li><a href="#">test3</a></li>
+						<li><a href="#">test4</a></li>
+						<li><a href="#">test5</a></li>
+						<div class="clear"> </div>
+					</ul>
+				</div>
+				<div class="footer-social-icons">
+					<ul>
+						<li><a href="#"><img th:src="@{/static/images/facebook.png}" title="facebook" /></a></li>
+						<li><a href="#"><img th:src="@{/static/images/twitter.png}" title="twitter" /></a></li>
+						<li><a href="#"><img th:src="@{/static/images/youtube.png}" title="Youtube" /></a></li>
+					</ul>
+				</div>
+				<div class="footer-form">
+					<h3>申请友链</h3>
+					<form>
+						<div class="footer-text-boxs">
+							<input type="text" name="name" class="textbox" value="名称:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '名称';}">
+							<input type="text" name="email" class="textbox" value="邮箱:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '邮箱';}">
+							<input type="text" name="relation" class="textbox" value="站长关系:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '站长关系';}">
+							<input type="text" name="link" class="textbox" value="站点，带http或https:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '站点，带http或https';}">
+						</div>
+						<div class="footer-text-area">
+							<textarea name="intro" value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '简介';}">Message</textarea>
+						</div>
+						<input type="submit" value="提交">
+					</form>
+				</div>
+				<div class="clear"> </div>
+			</div>
+			<!---End-footer---->
+		
+		<!---End-wrap--->
+	
+</body>
+</html>
+

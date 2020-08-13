@@ -1,0 +1,40 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!---start-header--->
+<div class="header" id="common_header">
+
+    <!---start-logo--->
+    <div class="logo">
+        <a href="index.html"><img style="height: 50px;" th:src="@{/static/images/logo1.jpg}" title="logo" /></a>
+    </div>
+    <!---End-logo--->
+    <!---start-head-social-icons--->
+    <div class="top-social-icons" style="margin-top: 1em">
+        <div class="social-icons">
+            <ul>
+                <li><a th:href="@{/user/login}" href="#" style="color: #332A21">登录</a></li>
+                |
+                <li><a th:href="@{/user/login} + '#toregister'" href="#" style="color: #332A21">注册</a></li>
+                |
+                <li><a th:href="@{/user/login} + '?type=1'" style="color: #332A21">我的后台</a></li>
+            </ul>
+        </div>
+        <div class="clear"> </div>
+    </div>
+    <div class="clear"> </div>
+    <!---End-head-social-icons--->
+
+    <!---start-top-nav---->
+    <div class="top-nav">
+        <ul>
+            <li><a th:href="@{/article/getPage?currPage=1&size=5}">首页</a></li>
+            <li><a href="#">模板</a></li>
+            <li><a href="#">通讯录</a></li>
+            <li><a href="#">备忘录</a></li>
+            <li><a href="#">相册</a></li>
+            <li><a href="#">关于我</a></li>
+            <div class="clear"> </div>
+        </ul>
+    </div>
+    <!---End-top-nav---->
+</div>
+<!---End-header--->

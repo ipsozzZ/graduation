@@ -1,0 +1,76 @@
+server:
+  port: 9001
+
+eureka:
+  client:
+    register-with-eureka: true  # 标识当前为eureka服务端，不是客户端
+    fetch-registry: true        # 服务发现，false表示自己不会错服务注册中心获取自己
+    service-url:
+      defaultZone: http://127.0.0.1:6001/eureka,http://localhost:6002/eureka   # 服务注册中心访问地址
+  instance:
+    instance-id: ${spring.application.name}:${server.port}  status栏显示微服务名
+    prefer-ip-address: true   # 访问路径就会显示ip地址
+
+# 设置提供的服务名
+spring:
+  application:
+    name: graduation-provider  # 服务名称，服务之间通过服务名调用
+  #配置数据库
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://123.206.109.108:3306/graduation?serverTimezone=GMT%2b8
+    username: graduation
+    password: gqm1975386453
+
+  # 配置redis
+  redis:
+    host: 127.0.0.1
+    #  password: ""
+    #  数据库索引 默认0
+    password: "gqm1975386453"
+    # 数据库索引 默认0
+    database: 0
+    port: 6379
+    # 超时时间 Duration类型 3秒
+    timeout: 30s
+
+  # thymeleaf 配置
+  thymeleaf:
+    cache: false   # 关掉thymeleaf缓存，否则有时候刷新可能会失败
+    mode: HTML5
+    encoding: UTF-8
+
+
+  servlet:
+    multipart:
+      # 文件上传大小限制
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+logging:
+  level:
+    live.ipso: debug
+  path: "E:/test/test.log" # 配置日志文件路径
+
+mybatis-plus:
+  mapper-locations: classpath*:mybatis/**/*Mapper.xml
+  type-aliases-package: live.ipso.entities
+  global-config:
+    id-type: 3  # 主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+    worker-id: 1  # 机器 ID 部分(影响雪花ID)
+    datacenter-id: 18 # 数据标识 ID 部分(影响雪花ID)(workerId 和 datacenterId 一起配置才能重新初始化 Sequence)
+    field-strategy: 2 # 字段策略 0:"忽略判断",1:"非 NULL 判断",2:"非空判断"
+    mapUnderscoreToCamelCase: true # 驼峰下划线转换
+
+    refresh-mapper: true # 刷新mapper 调试神器
+
+    # 逻辑删除
+    logic-delete-value: 0
+    logic-not-delete-value: 1
+
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    # 将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+

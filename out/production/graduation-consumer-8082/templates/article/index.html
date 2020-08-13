@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+	<head>
+		<title>Home</title>
+		<link th:href="@{/static/css/style.css}" rel="stylesheet" type="text/css"  media="all" />
+	</head>
+	<body>
+		<!---start-wrap--->
+		<div class="wrap">
+			<!---start-header--->
+			<div th:replace="./common/header"></div>
+			<!---End-header--->
+
+			<!---start-main---->
+			<div class="main">
+				<!---start-Content---->
+				<div class="content">
+					
+					<!-- 布局需求 -->
+					<div class="image-slider">		
+					</div>
+					<div class="clear"> </div>
+
+					<div class="Latest-news">
+						<div class="Latest-news-title">
+							<h3>文章列表</h3>
+							<h5> </h5>
+							<div class="clear"> </div>
+						</div>
+
+						<!--/*@thymesVar id="list" type="Article"*/-->
+						<div th:each="article:${list}" class="blog-articals">
+							<div class="artical">
+								<div class="artical-heading">
+									<!--/*@thymesVar id="articleName" type="String"*/-->
+									<h3 th:text="${article.articleName}"></h3>
+									<h4><span>发布日期:</span> <span th:text="${article.updateTime}">4564546</span></h4>
+								</div>
+								<div class="artical-box">
+									<div class="artical-img">
+										<a th:href="@{/article/get} + '?id=' + ${article.articleId}" href="#">
+											<img th:src="${article.articleCover}" title="imag-name" />
+										</a>
+									</div>
+									<div class="artical-info">
+										<p th:text="${article.remark}">计算机中有很多的编程语言序进行通讯和数据交计算工作，从而提高程序性能</a></p>
+									</div>
+									<div class="clear"> </div>
+								</div>
+							</div>
+						</div>
+
+						<a class="button" th:href="@{/article/getPage?currPage=1&size=} + ${page.total}">浏览所有文章</a>
+					</div>
+				</div>
+				<!---End-Content---->
+
+				<!---start-sidebar---->
+				<div th:replace="./common/sidebar"></div>
+				<!---End-sidebar---->
+
+			</div>
+			<!---End-main---->
+		</div>
+		<!---End-wrap--->
+
+		<!---start-footer---->
+		<div th:replace="./common/footer"></div>
+		<!---End-footer---->
+	</body>
+</html>
+

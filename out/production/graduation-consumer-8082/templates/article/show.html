@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+	<head>
+		<title>Home</title>
+		<link th:href="@{/static/css/style.css}" rel="stylesheet" type="text/css"  media="all" />
+	</head>
+<body>
+	<!---start-wrap--->
+	<div class="wrap">
+		<!---start-wrap--->
+		<div th:replace="./common/header"></div>
+		<!---End-header--->
+
+		<!---start-main---->
+		<div class="main">
+			<!---start-Content---->
+			<div class="content">
+
+				<!-- 布局需求 -->
+				<div class="image-slider">
+				</div>
+				<div class="clear"> </div>
+
+				<div class="Latest-news">
+					<div class="Latest-news-title">
+						<h3>文章详情</h3>
+						<h5> </h5>
+						<div class="clear"> </div>
+					</div>
+					<div class="blog-articals">
+						<div class="artical">
+							<h3 style="font-size: 2em;" th:text="${article.articleName}"></h3>
+							<div class="artical-heading">
+								<h4><span>发布日期</span> <span th:text="${article.updateTime}"></span></h4>
+							</div>
+							<div class="artical-info">
+
+							</div>
+							<div class="clear"> </div>
+						</div>
+						<div style="margin-top: 2em;">
+							<p style="line-height: 1.5em; text-indent: 2em; word-spacing: 1.5em;">
+								[(${article.content})]
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!---End-Content---->
+
+			<!---start-sidebar---->
+			<div th:replace="./common/sidebar"></div>
+			<!---End-sidebar---->
+
+		</div>
+		<!---End-main---->
+	</div>
+	<!---End-wrap--->
+	<div th:replace="./common/footer"></div>
+
+</body>
+</html>
+

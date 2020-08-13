@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+	<head>
+		<title>Contact</title>
+		<link th:href="@{/static/css/style.css}" rel="stylesheet" type="text/css"  media="all" />
+	</head>
+	<body>
+		<!---start-wrap--->
+		<div class="wrap">
+
+			<!---start-header--->
+			<div th:replace="./common/header"></div>
+			<!---End-header--->
+
+			<!---start-main---->
+			<div class="main">
+				<!---start-Content---->
+				<!---start-Contact---->
+				<div class="content">
+					<div class="contact">
+						<h3>个人中心</h3>
+						<div>
+							<h3><span>用户编号:</span> <span th:text="${user.userId}"></span></h3>
+							<h3><span>用户名:</span> <span th:text="${user.userName}"></span></h3>
+							<h3><span>用户电话:</span> <span th:text="${user.userPhone}"></span></h3>
+							<h3><span>用户邮箱:</span> <span th:text="${user.userEmail}"></span></h3>
+						</div>
+					</div>
+					<div class="clear"> </div>
+				</div>
+				<!---End-Contact---->
+				<!---End-Content---->
+
+				<!---start-sidebar---->
+				<div th:replace="./common/sidebar"></div>
+				<!---End-sidebar---->
+			</div>
+			<!---End-main---->
+		</div>
+		<!---End-wrap--->
+		<!---start-footer---->
+		<div th:replace="./common/footer"></div>
+		<!---End-footer---->
+</body>
+</html>
+

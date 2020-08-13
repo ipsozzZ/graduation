@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="graduation-eureka-6002" />
+        <module name="graduation-eureka-6001" />
+        <module name="graduation-provider-9001" />
+        <module name="graduation-provider-9004" />
+        <module name="graduation-provider-9003" />
+        <module name="graduation-consumer-8081" />
+        <module name="graduation-entity" />
+        <module name="graduation-consumer-backend-8091" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="graduation-01" target="1.8" />
+      <module name="graduation-consumer-8081" target="1.8" />
+      <module name="graduation-consumer-8082" target="1.8" />
+      <module name="graduation-consumer-8083" target="1.8" />
+      <module name="graduation-consumer-backend-8091" target="1.8" />
+      <module name="graduation-consumer-backend-8092" target="1.8" />
+      <module name="graduation-entity" target="1.8" />
+      <module name="graduation-eureka-6001" target="1.8" />
+      <module name="graduation-eureka-6002" target="1.8" />
+      <module name="graduation-provider-9001" target="1.8" />
+      <module name="graduation-provider-9002" target="1.8" />
+      <module name="graduation-provider-9003" target="1.8" />
+      <module name="graduation-provider-9004" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="graduation-consumer-8081" options="-parameters" />
+      <module name="graduation-consumer-8082" options="-parameters" />
+      <module name="graduation-consumer-8083" options="-parameters" />
+      <module name="graduation-consumer-backend-8091" options="-parameters" />
+      <module name="graduation-consumer-backend-8092" options="-parameters" />
+      <module name="graduation-entity" options="-parameters" />
+      <module name="graduation-eureka-6001" options="-parameters" />
+      <module name="graduation-eureka-6002" options="-parameters" />
+      <module name="graduation-provider-9001" options="-parameters" />
+      <module name="graduation-provider-9002" options="-parameters" />
+      <module name="graduation-provider-9003" options="-parameters" />
+      <module name="graduation-provider-9004" options="-parameters" />
+    </option>
+  </component>
+</project>

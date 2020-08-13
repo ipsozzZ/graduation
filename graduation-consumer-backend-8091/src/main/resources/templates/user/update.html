@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>会员服务中心</title>
+	<link th:href="@{/static/layui/css/layui.css}" rel="stylesheet" type="text/css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+
+	<div th:replace="./common/header"></div>
+
+	<div class="layui-body">
+		<!-- 内容主体区域 start -->
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">用户资料</label>
+			<div class="layui-input-block">
+
+				<form class="layui-form" th:action="@{/user/update}" th:object="${user}" method="post" >
+					<input type="text" name="userId" style="display: none" th:value="${user.userId}" />
+					<div class="layui-form-item">
+						<label class="layui-form-label">账号</label>
+						<div class="layui-input-block">
+							<input type="text" name="userName" th:value="${user.userName}" required  lay-verify="required" placeholder="请输入账号" autocomplete="off" class="layui-input" />
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">电话</label>
+						<div class="layui-input-block">
+							<input type="text" name="userPhone" required th:value="${user.userPhone}" lay-verify="required" placeholder="请输入电话" autocomplete="off" class="layui-input" />
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">邮箱</label>
+						<div class="layui-input-block">
+							<input type="text" name="userEmail" th:value="${user.userEmail}" placeholder="输入" autocomplete="off" class="layui-input" />
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">密码</label>
+						<div class="layui-input-block">
+							<input type="password" name="userPass" th:value="${user.userPass}"  placeholder="输入" autocomplete="off" class="layui-input" />
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<button class="layui-btn" lay-filter="formDemo">更新</button>
+							<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- 内容主体区域 end -->
+	</div>
+
+	<div th:replace="./common/footer"></div>
+
+</div>
+<script th:src="@{/static/layui/layui.js}"></script>
+<script>
+	layui.use(['element', 'layer', 'form'], function(){
+		var element = layui.element;
+		var layer = layui.layer;
+
+		//监听折叠
+		element.on('collapse(test)', function(data){
+			layer.msg('展开状态：'+ data.show);
+		});
+
+		var form = layui.form;
+
+		//监听提交
+		form.on('submit(formDemo)', function(data){
+			layer.msg(JSON.stringify(data.field));
+			return false;
+		});
+
+	});
+
+	layui.use('upload', function(){
+		var upload = layui.upload;
+
+		//执行实例
+		upload.render({
+			elem: '#test1' //绑定元素
+			,url: '/file/upload' //上传接口
+			,done: function(res){
+				//上传完毕回调
+				console.log(res)
+			}
+			,error: function(){
+				alert("失败")
+				//请求异常回调
+			}
+		});
+	});
+</script>
+</body>
+</html>

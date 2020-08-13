@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/graduation-01" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/graduation-consumer-8081" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/graduation-consumer-8082" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/graduation-consumer-8083" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/graduation-consumer-backend-8091" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/graduation-consumer-backend-8092" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/graduation-entity" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/graduation-eureka-6001" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/graduation-eureka-6002" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/graduation-provider-9001" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/graduation-provider-9002" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/graduation-provider-9003" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/graduation-provider-9004" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,57 @@
+server:
+  port: 8092
+  tomcat:
+    # tomcat的URI编码
+    uri-encoding: UTF-8
+    # tomcat最大线程数，默认为200
+    max-threads: 800
+    # Tomcat启动初始化的线程数，默认值25
+    min-spare-threads: 30
+
+
+# 设置提供的服务名
+spring:
+  application:
+    name: graduation-consumer-backend-8092  # 服务名称，服务之间通过服务名调用
+  #配置数据库
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://123.206.109.108:3306/graduation?serverTimezone=GMT%2b8
+    username: graduation
+    password: gqm1975386453
+
+  mvc:
+    servlet:
+      load-on-startup: 1
+    static-path-pattern: /**
+
+  # thymeleaf 配置
+  thymeleaf:
+    cache: false   # 关掉thymeleaf缓存，否则有时候刷新可能会失败
+    mode: HTML5
+    encoding: UTF-8
+    prefix: classpath:/templates/  # 静态资源(包括html等静态资源)路径前缀
+    suffix: .html  # 静态资源路径后缀
+    servlet:
+      content-type: text/html
+
+
+  servlet:
+    multipart:
+      # 文件上传大小限制
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+eureka:
+  client:
+    register-with-eureka: false  # 标识当前为eureka服务端，不是客户端
+    fetch-registry: true        # 服务发现，false表示自己不会错服务注册中心获取自己
+    service-url:
+      defaultZone: http://127.0.0.1:6001/eureka,http://localhost:6002/eureka   # 服务注册中心访问地址
+
+logging:
+  level:
+    live.ipso: debug
+  path: "E:/test/test1.log" # 配置日志文件路径
+
+

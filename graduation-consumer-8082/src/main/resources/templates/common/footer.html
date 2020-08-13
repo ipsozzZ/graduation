@@ -1,0 +1,44 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!---start-footer---->
+<!---start-footer---->
+<div class="footer" id="common_footer">
+    <div class="footer-nav-grid">
+        <ul>
+            <li><a href="#">友情链接：</a></li>
+            <li><a href="http://www.ipso.live" target="_blank">ipso</a></li>
+            <li><a href="https://www.baidu.com/">百度</a></li>
+            <li><a href="#">test1</a></li>
+            <li><a href="#">test2</a></li>
+            <li><a href="#">test2</a></li>
+            <li><a href="#">test3</a></li>
+            <li><a href="#">test4</a></li>
+            <li><a href="#">test5</a></li>
+            <div class="clear"> </div>
+        </ul>
+    </div>
+    <div class="footer-social-icons">
+        <ul>
+            <li><a href="#"><img th:src="@{/static/images/facebook.png}" title="facebook" /></a></li>
+            <li><a href="#"><img th:src="@{/static/images/twitter.png}" title="twitter" /></a></li>
+            <li><a href="#"><img th:src="@{/static/images/youtube.png}" title="Youtube" /></a></li>
+        </ul>
+    </div>
+    <div class="footer-form">
+        <h3>申请友链</h3>
+        <form>
+            <div class="footer-text-boxs">
+                <input type="text" name="name" class="textbox" value="名称:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '名称';}">
+                <input type="text" name="email" class="textbox" value="邮箱:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '邮箱';}">
+                <input type="text" name="relation" class="textbox" value="站长关系:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '站长关系';}">
+                <input type="text" name="link" class="textbox" value="站点，带http或https:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '站点，带http或https';}">
+            </div>
+            <div class="footer-text-area">
+                <textarea name="intro" value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '简介';}">Message</textarea>
+            </div>
+            <input type="submit" value="提交">
+        </form>
+    </div>
+    <div class="clear"> </div>
+</div>
+<!---End-footer---->
+<!---End-footer---->

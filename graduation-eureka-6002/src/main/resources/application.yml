@@ -1,0 +1,14 @@
+server:
+  port: 6002
+
+eureka:
+  instance:
+    hostname: localhost          # eureka服务端的实例名称
+  client:
+    register-with-eureka: false  # 标识当前为eureka服务端，不是客户端
+    fetch-registry: false        # 服务发现，false表示自己不会错服务注册中心获取自己
+    service-url:
+      # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/   # 服务注册中心访问地址
+      defaultZone: http://127.0.0.1:6001/eureka/   # 服务注册中心访问地址,集群版时地址是集群中的其它服务注册中心的地址
+  server:
+    enable-self-preservation: false   # 在开发阶段禁用eureka的自我保护机制，部署阶段再开启

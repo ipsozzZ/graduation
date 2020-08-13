@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FindBugsConfigurable">
+    <option name="make" value="true" />
+    <option name="effort" value="default" />
+    <option name="priority" value="Medium" />
+    <option name="excludeFilter" value="" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/graduation-01/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/graduation-consumer-8082/pom.xml" />
+        <option value="$PROJECT_DIR$/graduation-consumer-8083/pom.xml" />
+        <option value="$PROJECT_DIR$/graduation-consumer-backend-8092/pom.xml" />
+        <option value="$PROJECT_DIR$/graduation-provider-9001/pom.xml" />
+        <option value="$PROJECT_DIR$/graduation-provider-9002/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="SuppressionsComponent">
+    <option name="suppComments" value="[]" />
+  </component>
+</project>
